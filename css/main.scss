@@ -1,0 +1,153 @@
+@mixin mobile {
+    @media screen and (max-width: 560px) {
+        @content;
+    }
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* MAIN */
+
+body {
+    min-height: 100vh;
+    background-color: #2576B1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+}
+
+.container {
+    display: flex;
+    gap: 0 3.7rem;
+    margin-top: -195px;
+
+    @include mobile {
+        flex-direction: column;
+        margin-top: unset;
+    }
+    
+    .card {
+        position: relative;
+        text-align: center;
+
+        &:hover .film-details {
+            animation: bounce .4s backwards;
+            transform: scale(1);
+        }
+
+        @include mobile {
+            &:first-child {
+                margin-bottom: 260px;
+            }
+
+            &:last-child {
+                margin-bottom: 179px;
+            }
+
+            &:hover .film-details {
+                animation: unset;
+            }
+        }
+
+        .poster {
+            box-shadow: 0 8px 11px rgba(0,0,0,.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .film-details {
+            background-color: #fff;
+            position: absolute;
+            top: 20px;
+            left: -9%;
+            transform: scale(0);
+            width: 118%;
+            padding-top: 332px;
+            border-radius: 5px;
+            box-shadow: 0 10px 14px rgba(0,0,0,.3);
+            overflow: hidden;
+            transition: transform .15s;
+
+            @include mobile {
+                transform: unset;
+                transition: unset;
+            }
+            
+            .title {
+                font-size: 1.1rem;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+
+            .catchphrase {
+                color: #777;
+                font-size: .85rem;
+                margin-top: .35rem;
+            }
+
+            .actual-price {
+                color: #2BCD77;
+                font-weight: 500;
+                font-size: 1.1rem;
+                margin-top: 1.3rem;
+            }
+
+            .old-price {
+                color: #999;
+                font-weight: 500;
+                font-size: .95rem;
+                margin-top: 1px;
+                text-decoration: line-through;
+            }
+
+            .buy-btn {
+                border: none;
+                outline: none;
+                width: 100%;
+                text-transform: uppercase;
+                background-color: #292929;
+                cursor: pointer;
+                font-family: "Roboto", sans-serif;
+                color: #fff;
+                font-size: .85rem;
+                font-weight: 500;
+                margin-top: 1.3rem;
+                padding: 1.3rem 0;
+                transition: background-color .1s;
+
+                &:hover {
+                    background-color: #1f1f1f;
+                }
+
+                &:active {
+                    background-color: #161616;
+                }
+            }
+        }
+    }
+}
+
+/* ANIMATION */
+
+@keyframes bounce {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    75% {
+        transform: scale(.975);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,193 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* MAIN */
+body {
+  min-height: 100vh;
+  background-color: #2576B1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3rem 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 3.7rem;
+  margin-top: -195px;
+}
+
+@media screen and (max-width: 560px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: unset;
+  }
+}
+
+.container .card {
+  position: relative;
+  text-align: center;
+}
+
+.container .card:hover .film-details {
+  -webkit-animation: bounce .4s backwards;
+          animation: bounce .4s backwards;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@media screen and (max-width: 560px) {
+  .container .card:first-child {
+    margin-bottom: 260px;
+  }
+  .container .card:last-child {
+    margin-bottom: 179px;
+  }
+  .container .card:hover .film-details {
+    -webkit-animation: unset;
+            animation: unset;
+  }
+}
+
+.container .card .poster {
+  -webkit-box-shadow: 0 8px 11px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 11px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+}
+
+.container .card .film-details {
+  background-color: #fff;
+  position: absolute;
+  top: 20px;
+  left: -9%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  width: 118%;
+  padding-top: 332px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  -webkit-transition: -webkit-transform .15s;
+  transition: -webkit-transform .15s;
+  transition: transform .15s;
+  transition: transform .15s, -webkit-transform .15s;
+}
+
+@media screen and (max-width: 560px) {
+  .container .card .film-details {
+    -webkit-transform: unset;
+            transform: unset;
+    -webkit-transition: unset;
+    transition: unset;
+  }
+}
+
+.container .card .film-details .title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.container .card .film-details .catchphrase {
+  color: #777;
+  font-size: .85rem;
+  margin-top: .35rem;
+}
+
+.container .card .film-details .actual-price {
+  color: #2BCD77;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-top: 1.3rem;
+}
+
+.container .card .film-details .old-price {
+  color: #999;
+  font-weight: 500;
+  font-size: .95rem;
+  margin-top: 1px;
+  text-decoration: line-through;
+}
+
+.container .card .film-details .buy-btn {
+  border: none;
+  outline: none;
+  width: 100%;
+  text-transform: uppercase;
+  background-color: #292929;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 500;
+  margin-top: 1.3rem;
+  padding: 1.3rem 0;
+  -webkit-transition: background-color .1s;
+  transition: background-color .1s;
+}
+
+.container .card .film-details .buy-btn:hover {
+  background-color: #1f1f1f;
+}
+
+.container .card .film-details .buy-btn:active {
+  background-color: #161616;
+}
+
+/* ANIMATION */
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.04);
+            transform: scale(1.04);
+  }
+  75% {
+    -webkit-transform: scale(0.975);
+            transform: scale(0.975);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1.04);
+            transform: scale(1.04);
+  }
+  75% {
+    -webkit-transform: scale(0.975);
+            transform: scale(0.975);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=main.css.map */
